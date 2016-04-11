@@ -1,0 +1,22 @@
+<h3>
+<input type="search" ng-model="searchTerm"/>
+	<table ng-width="50%" border="1" cellspacing="2" cellpadding="1" >
+		<tr>
+			<th>Title</th>
+			<th>Experience</th>
+			<th>Job Type</th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="x in jobsList | filter:{title:searchTerm}">
+			<td>{{x.title}}
+			</td>
+			<td>{{x.experience}}
+			</td>
+			<td>{{x.jobType}}
+			</td>
+			<td><a href="#edit">edit</a></td>
+			<td><a href="#delete">delete</a></td>
+		</tr>
+	</table>
+</h3>

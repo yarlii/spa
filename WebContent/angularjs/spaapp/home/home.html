@@ -1,0 +1,65 @@
+<h1>Welcome to PROIT</h1>
+<br>
+<h3>A pro active approach to IT service</h3>
+<br>
+
+
+<!-- <img ng-src="{{img[0].src}}" class="img-thumbnail figure" /> -->
+<div class="container">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!--the above is container section and data-ride = carousel is a custom attribute which helps to slide imagesautomatically when page loads -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3 "></li>
+		</ol>
+		<!--the above is indicators section and the attribute data-target holds the id of the carrousel container -->
+		<div class="carousel-inner" role="listbox">
+
+			<div ng-repeat="img in imgs">
+				<img ng-src="{{img.src}}"> <span
+					ng-if="img.src == images/3-nature-photography-cherry-tree.jpg"
+					class="item active"> <span ng-else="img.src" class="item">
+				</span>
+				</span> </img>
+			</div>
+
+		</div>
+		<!-- 
+			 <div class="item active">
+				<img ng-src="{{imgs[0].src}}" alt="slide1"/>
+				<div class="carousel-caption">
+					<p>PROIT image 1</p>
+				</div>
+			</div>
+			  <div class="item">
+				<img ng-src="{{imgs[1].src}}" alt="slide2"/>
+				<div class="carousel-caption">
+					<p>PROIT image 2</p>
+				</div>
+			</div>
+
+			<div class="item">
+				<img ng-src="{{imgs[2].src}}" alt="slide3" />
+				<div class="carousel-caption">
+					<p>PROIT image 3</p>
+				</div>
+			</div>
+
+			<div class="item">
+				<img ng-src="{{imgs[3].src}}" alt="slide4"  />
+				<div class="carousel-caption">  
+					<p>PROIT image 4</p>
+				</div>
+			</div>  -->
+
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev"
+			role="button"> <span class="glyphicon glyphicon-chevron-left"></span>
+		</a> <a class="right carousel-control" href="#myCarousel"
+			data-slide="next" role="button"> <span
+			class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</div>
+</div>
+

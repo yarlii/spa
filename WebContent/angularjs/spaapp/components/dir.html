@@ -1,0 +1,21 @@
+<table ng-width="50%" border="1" cellspacing="2" cellpadding="1" ng-table="tableParams" class="table table-striped" >
+	<tr>
+		<a href="#add">add</a>
+	</tr>
+	<tr>
+		<th>Title</th>
+		<th>Experience</th>
+		<th>Type</th>
+		<th>Description</th>
+		<th colspan="2"></th>
+	</tr>
+	<tr ng-repeat="jobObj in $data | filter:{title:searchTitle}">
+		<td>{{jobObj.title}}</td>
+		<td>{{jobObj.experience}}</td>
+		<td>{{jobObj.type}}</td>
+		<td>{{jobObj.desc}}</td>
+		<td><a href="#edit/{{jobObj.title}}">edit</a></td>
+		<td><a href="javascript:void(0)" ng-click = "deletejob(jobObj.title)">delete</a></td>
+	</tr>
+</table>
+<div ng-transclude></div>

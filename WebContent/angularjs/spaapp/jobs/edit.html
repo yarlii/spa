@@ -1,0 +1,34 @@
+
+ <form name="editForm">
+	Title:<input type="text" ng-model="title" name="title" required ng-minlength="2" ng-maxlength="30" ng-pattern="/^[a-zA-Z]*$/">
+	    <div ng-show="editForm.title.$invalid && editForm.title.$dirty" class="error">Invalid title</div>
+		<div ng-show="editForm.title.$error.minlength" class="error">you must enter atleast 2 characters</div>
+		<div ng-show="editForm.title.$error.maxlength" class="error">you must enter less than 10 characters</div>
+		<div ng-show="editForm.title.$error.required" class="error">you must enter valid title</div>
+		<div ng-show="addForm.titleText.$error.pattern" class="error"> A-Z alphabets are only valid. Numbers are not valid</div>
+		</input>
+		<br> 
+   Experience:<input type="number" ng-model="experience" name="exp" required>
+	<div ng-show="editForm.exp.$error.required" class="error">you must enter valid experience</div>
+	</input>
+	    <br>
+   Type:<select id="jobType" ng-model="type" name="job" required>
+		<option value="-1">Please Select One</option>
+		<option value="CONTRACT">CONTRACT</option>
+		<option value="PERMNENT">PERMNENT</option>
+	</select> 
+	<div ng-show="editForm.job.$invalid && editForm.job.$dirty" class="error"> Enter valid job type</div>
+	<div ng-show="editForm.job.$error.required" class="error">jobtype is required</div>
+	<br>
+	
+	Description:<input type="text" ng-model="desc" name="descText" required ng-minlength="1" ng-maxlength="50" ng-pattern="/^[a-zA-Z,+]*$/">
+	 <div ng-show="editForm.descText.$invalid && editForm.title.$dirty" class="error">Invalid title</div>
+		<div ng-show="editForm.descText.$error.minlength" class="error">you must enter atleast 1 characters</div>
+		<div ng-show="editForm.descText.$error.maxlength" class="error">you must enter less than 15 characters</div>
+		<div ng-show="editForm.descText.$error.required" class="error">you must enter valid title</div>
+		<div ng-show="addForm.titleText.$error.pattern" class="error"> A-Z alphabets are only valid. Numbers are not valid</div>
+	</input>
+	<br>
+	 <input
+		type="button" value="Edit Job" ng-click="editJob()" ng-disabled="editForm.$invalid"/>
+</form> 

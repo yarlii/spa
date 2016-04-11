@@ -1,0 +1,37 @@
+
+ <form name="addForm">
+
+    Title:
+    <input type="text" ng-model="title" name="titleText" required ng-minlength="2" ng-maxlength="20" ng-pattern="/^[a-zA-Z]*$/" >
+    <div ng-show="addForm.titleText.$dirty && addForm.titleText.$invalid" class="error">invalid title</div>
+    <div ng-show="addForm.titleText.$error.minlength" class="error">you must enter atleast 2 characters</div>
+    <div ng-show="addForm.titleText.$error.maxlength" class="error">you must enter less than 10 characters</div>
+    <div ng-show="addForm.titleText.$error.required" class="error">Details are required</div>
+    <div ng-show="addForm.titleText.$error.pattern" class="error"> A-Z alphabets are only valid. Numbers are not valid</div>
+    </input>
+    <br> Experience:
+    <input type="number" ng-model="experience" name="exp"  required >
+    <div ng-show="addForm.exp.$invalid && addForm.exp.$dirty" class="error">enter valid experience</div>
+    <div ng-show="addForm.exp.$error.required" class="error">Experience is required</div>
+    </input>
+    <br> Type:
+    <select id="jobType" ng-model="type" name="job" required>
+    
+        <option value="-1">Please Select One</option>
+        <option value="CONTRACT">CONTRACT</option>
+        <option value="PERMNENT">PERMNENT</option>        
+    </select> 
+    <div ng-show="addForm.job.$error.required" class="jobs"> Jobtype details are required</div>
+    <div ng-show="addForm.job.$invalid && addForm.job.$dirty">enter valid job type</div>
+    <br>
+    Description::
+    <input type="text" ng-model="description" name="descText" required ng-minlength="1" ng-maxlength="50" ng-pattern="/^[a-zA-Z+,]*$/">
+    <div ng-show="addForm.descText.$invalid && addForm.descText.$dirty" class="error">Invalid description</div>
+    <div ng-show="addForm.descText.$error.minlength" class="error">you must enter atleast 1 character</div>
+    <div ng-show="addForm.descText.$error.maxlength" class="error">you must enter less than 50 characters</div>
+    <div ng-show="addForm.descText.$error.required" class="error">Details are required</div>
+    <div ng-show="addForm.descText.$error.pattern" class="error"> A-Z alphabets are only valid. Numbers are not valid</div>
+    </input>
+    <br>
+    <input type="button" value="add Job" ng-click="addJob()"  ng-disabled="addForm.$invalid" />
+</form>
